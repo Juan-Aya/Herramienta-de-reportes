@@ -1,0 +1,119 @@
+*{
+    margin: 0;/*margen*/
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;/*tipo de fuente de la letra*/
+    padding: 90px 20px 0; /*posicion del texto del cuerpos*/
+}
+.header{
+    background-color: #460888; /*color del header*/
+    height: 80px;/*alto del header*/    
+    position: fixed;/*posicion fija del header en la pagina*/
+    width: 100%;/*ancho del header*/
+    top: 0;/*en el top de donde este estara fija*/
+    left: 0;
+}
+.nav{
+     display: flex;
+     justify-content: space-between;
+
+     max-width: 992px; /* --Cuando se agranda la pantalla centrar los item */
+     margin: 0 auto;/* --centrar el contenido*/
+}
+.nav-link{
+    color: rgb(255, 255, 255);/*color del texto*/
+    text-decoration: none;/*le quita el subrayado del link*/
+}
+.logo{
+    font-size: 30px; /*tamaño del logo*/
+    font-weight: bold; /*negrita fuerte color*/
+    padding: 0 40px; /*centro el logo*/
+    line-height: 80px; /*se alineo ahicia abajo el logo*/
+}
+.nav-menu{
+    display: flex; /*organizado horizontal*/
+    margin-right: 40px;/*separacion del el mergen de la derecha*/
+    list-style: none;/*quita los puntios del la lista*/
+}
+.nav-menu-item{
+    font-size: 18px;/*grande de la letra*/
+    margin: 0 10px;/*separado entree item*/
+    line-height: 80px; /*separacion del margen superior*/
+    text-transform: uppercase;/*tipo de fuente*/
+    width: max-content; /*nunca corta el contenido del la pagina*/
+}
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+} 
+.nav-menu-link:hover,
+.nav-menu-link_active{
+    background-color: #bf129d; /*color que hace resaltar el icon*/
+    transition: 0.5s;
+}
+
+.nav-toggle{
+     color: rgb(249, 247, 250); 
+     background: none;
+     border: none;
+     font-size: 30px;
+     padding: 0 20px;
+     line-height: 60px;
+     cursor: pointer;
+
+     display: none;
+}
+
+@media (max-width: 768px) {
+    body{
+        padding-top: 70px; /*posicion del texto del cuerpos*/
+    }
+    .header{
+        height:  60px;/*alto del header*/    
+    }
+  
+    .logo{
+        font-size: 25px; /*tamaño del logo*/
+        padding: 0 20px; /*centro el logo*/
+        line-height: 60px; /*se alineo ahicia abajo el logo*/
+    }
+    .nav-menu{
+        flex-direction: column; /*organizado horizontal*/
+        align-items: center;
+        margin-right: 20px;/*separacion del el mergen de la derecha*/
+        background-color: #304458;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .nav-menu-item{
+        
+        line-height: 70px; /*separacion del margen superior*/
+    }
+    .nav-menu-link:hover,
+    .nav-menu-link_active{
+        background:none; /*color que hace resaltar el icon*/
+        color: #4e98d9;
+    }    
+    }
+    .nav-toggle{
+        display: block;
+        
+    }
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+  
